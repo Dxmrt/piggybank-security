@@ -1,36 +1,81 @@
-# PiggyBank Security Project
+# 🐷 PiggyBank security project
 
-This repository contains smart contract security examples demonstrating vulnerable and secure implementations of a PiggyBank contract, along with an attack contract to demonstrate the vulnerabilities.
+This repository showcases a practical security audit of a simple PiggyBank smart contract. It includes both a vulnerable and a secure implementation, as well as an attacker contract used to simulate and demonstrate how smart contract vulnerabilities can be exploited.
 
-## Contracts
+---
 
-### VulnerablePiggyBank.sol
-A vulnerable implementation of a PiggyBank contract that demonstrates common security flaws in smart contract development.
+## 📄 Contracts overview
 
-### SecurePiggyBank.sol
-A secure implementation of a PiggyBank contract that addresses the vulnerabilities present in the vulnerable version.
+### 🔴 VulnerablePiggyBank.sol
+A minimal but insecure PiggyBank contract. It lacks access control on sensitive functions, allowing anyone to withdraw the entire balance.
 
-### AttackPiggyBank.sol
-An attack contract designed to exploit the vulnerabilities in the VulnerablePiggyBank contract, demonstrating how these security flaws can be exploited.
+### 🟢 SecurePiggyBank.sol
+A properly secured version of the PiggyBank contract. It includes access control mechanisms to ensure that only the owner can withdraw funds.
 
-## Purpose
+### ⚔️ AttackPiggyBank.sol
+An attacker contract that simulates a real-world exploit. It interacts with the vulnerable contract to demonstrate how funds can be stolen due to missing security checks.
 
-This project serves as an educational resource for understanding smart contract security vulnerabilities and best practices for secure smart contract development.
+---
 
-## Getting Started
+## 🎯 Purpose
 
-To interact with these contracts, you'll need:
-- A Solidity development environment (like Remix, Hardhat, or Truffle)
-- An Ethereum testnet or local blockchain for testing
+This project is built for educational purposes. It aims to help developers and auditors:
 
-## Security Learning
+- Understand common smart contract vulnerabilities
+- Learn how to fix them
+- Practice writing and testing attack contracts
+- Improve overall Web3 security awareness
 
-This project demonstrates:
-- Common smart contract vulnerabilities
-- How to identify security flaws
-- Best practices for secure smart contract development
-- How to write attack contracts to test security
+---
 
-## License
+## 🚀 Getting started
 
-This project is for educational purposes.
+You can test and experiment with these contracts using:
+
+- [Remix IDE](https://remix.ethereum.org) (recommended for quick testing)
+- Hardhat or Truffle (for advanced testing and automation)
+
+---
+
+## 🧠 What you'll learn
+
+By exploring this repo, you'll be able to:
+
+- Identify and understand common Solidity security pitfalls
+- Compare vulnerable and secure code implementations
+- Learn how attackers can exploit poor access control
+- Apply best practices in smart contract development
+
+---
+
+## 📸 Visual walkthrough
+
+To illustrate the workflow, here are screenshots showing:
+
+### 1. Compiling the vulnerable contract in Remix
+
+![Compile Contract](./images/piggybank-compilecontract.png)
+
+### 2. Depositing 1 ETH into the VulnerablePiggyBank & execute the attack with AttackPiggyBank
+
+![Deposit ETH and execute attack with AttackPiggyBank](./images/piggybank-attack.png)
+
+---
+
+## 📁 Folder structure
+```
+piggybank-security/
+├── contracts/
+│ ├── VulnerablePiggyBank.sol
+│ ├── SecurePiggyBank.sol
+│ └── AttackPiggyBank.sol
+├── images/
+  ├── piggybank-attack.png
+  ├── piggybank-compilecontract.png
+└── README.md
+```
+---
+
+## ⚖️ License
+
+This project is open source and intended strictly for **educational purposes only**. Do not use the vulnerable code in production environments.
